@@ -4,14 +4,12 @@ import NodeGeocoder from "node-geocoder";
 const geocoder = NodeGeocoder({
   provider: "openstreetmap",
   httpAdapter: "https",
-  formatter: null,
-  fetchOptions: {
-    headers: {
-      "User-Agent": "CodemateBackend/1.0 (arishkannan941@gmail.com)", // ← your contact or project name
-      "Accept-Language": "en",
-    },
+  customHeaders: {
+    "User-Agent": "CodemateBackend/1.0 (arishkannan941@gmail.com)",
+    "Accept-Language": "en",
   },
 });
+
 
 
 export const findMatches = async (userId) => {
