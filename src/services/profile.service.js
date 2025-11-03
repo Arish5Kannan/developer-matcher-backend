@@ -2,8 +2,17 @@ import Profile from "../models/profile.model.js";
 import NodeGeocoder from "node-geocoder";
 
 const geocoder = NodeGeocoder({
-  provider: "openstreetmap", // free alternative, can change to Google or Mapbox
+  provider: "openstreetmap",
+  httpAdapter: "https",
+  formatter: null,
+  fetchOptions: {
+    headers: {
+      "User-Agent": "CodemateBackend/1.0 (arishkannan941@gmail.com)", // ← your contact or project name
+      "Accept-Language": "en",
+    },
+  },
 });
+
 
 export const findMatches = async (userId) => {
   // Fetch current user's profile
