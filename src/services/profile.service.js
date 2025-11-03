@@ -2,13 +2,10 @@ import Profile from "../models/profile.model.js";
 import NodeGeocoder from "node-geocoder";
 
 const geocoder = NodeGeocoder({
-  provider: "openstreetmap",
-  httpAdapter: "https",
-  customHeaders: {
-    "User-Agent": "CodemateBackend/1.0 (arishkannan941@gmail.com)",
-    "Accept-Language": "en",
-  },
+  provider: "opencage",
+  apiKey: process.env.OPENCAGE_API_KEY,
 });
+
 
 
 
